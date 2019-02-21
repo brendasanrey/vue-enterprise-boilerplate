@@ -6,6 +6,8 @@ import '@components/_globals'
 import ApolloClient from "apollo-boost"
 import VueApollo from "vue-apollo"
 
+require('dotenv').config()
+
 // Don't warn about using the dev version of Vue in development.
 Vue.config.productionTip = process.env.NODE_ENV === 'production'
 
@@ -21,7 +23,7 @@ export const apolloClient = new ApolloClient({
   request: operation => {
     operation.setContext({
       headers: {
-        authorization: `Bearer bf20444d1001e6a1221632197d755eb5e9efd4c1`,
+        authorization: `Bearer ${process.env.TOKEN}`,
       },
     });
   },
