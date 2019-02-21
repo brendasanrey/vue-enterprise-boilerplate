@@ -47,7 +47,7 @@ export default {
           this.repositoriesList =
             response.data.repositoryOwner.repositories.nodes
         })
-    },
+    }, 
     addStar(repositoryId) {
       this.$apollo
         .mutate({
